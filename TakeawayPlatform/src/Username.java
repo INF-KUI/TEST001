@@ -16,6 +16,8 @@ public class Username {
     public void setBuyerUsername(String buyerUsername){
         this.buyerUsername=buyerUsername;
     }
+
+
     public String getSellerUsername(){
         return sellerUsername;
     }
