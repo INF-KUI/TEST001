@@ -7,11 +7,11 @@ public class MainProgram {
         Account account=new Account();
         Scanner input=new Scanner(System.in);
         Food food=new Food();
+    //主界面
         System.out.println("请选择你的操作:");
         System.out.println("1.账号登陆");
         System.out.println("2.账号注册");
         int op=input.nextInt();
-
         if(op==1){
         LoginSuccessful loginSuccessful=new LoginSuccessful();
             //登陆且返回登陆成功的账号类型
@@ -20,7 +20,6 @@ public class MainProgram {
 
         if(whichAccount==1){
             loginSuccessful.buyerLogin();
-
         }
         if(whichAccount==2){
             loginSuccessful.sellerLogin();

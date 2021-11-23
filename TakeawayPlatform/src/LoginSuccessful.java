@@ -2,8 +2,6 @@ import java.util.Scanner;
 
 public class LoginSuccessful {
 
-Food food=new Food();
-
 //买家登陆成功界面
 public void buyerLogin() {
     Scanner input = new Scanner(System.in);
@@ -29,7 +27,7 @@ public void buyerLogin() {
 }
 
 //商家登陆成功界面
-void sellerLogin(){
+public void sellerLogin(){
 
     Scanner input=new Scanner(System.in);
     int op;
@@ -40,16 +38,28 @@ void sellerLogin(){
     System.out.println("1.我要添加新的食物");
     System.out.println("2.我要删除食物");
     System.out.println("3.我要看看有什么美食");
-    System.out.println("4.我要修改食物");
+    System.out.println("4.我要修改食物的属性");
     op = input.nextInt();
     switch (op){
         case 1:
-
-
+            Food.list();//先列出现有的食物
+            System.out.println("添加到几号位？");
+            int op2=input.nextInt();
+            System.out.println("输入食物名字");
+            Food.setFoodName(op2-1,input.next());
+            System.out.println("输入食物单价");
+            Food.setFoodPrice(op2-1,input.nextDouble());
+            System.out.println("输入食物描述");
+            Food.addFoodDescription(op2,input.next());
+            System.out.println("添加成功");
+            break;
 
         case 2:
+
+            break;
         case 3:
 
+            break;
         case 4:
         }
     }

@@ -3,25 +3,25 @@ public class Food {
     double foodPrice;
     String foodDescription;
 
-    static Food food[]=new Food [5];
+    static Food[] food =new Food [5];
 
 //设置食物名称
-    public void setFoodName(String name){
-        this.foodName=name;
+    public static void setFoodName(int op2,String name){
+        food[op2].foodName=name;
     }
 //设置食物价格
-    public void setFoodPrice(double price){
-        this.foodPrice=price;
+    public static void setFoodPrice(int op2,double price){
+        food[op2].foodPrice=price;
     }
 //添加(修改)食物描述
-    public void addFoodDescription(String description){
-        this.foodDescription=description;
+    public static void addFoodDescription(int op2,String description){
+        food[op2].foodDescription=description;
     }
 
 //计算统计食物金额
 
 //搜索食物
-    public  void search(Food food[],String target){
+    public  void search(Food[] food, String target){
 
         int ret=foodName.indexOf(target);
         if(ret==-1){
@@ -32,7 +32,7 @@ public class Food {
 
 //列出所有食物信息
     public static void list(){
-        int i=0;
+        int i;
         for(i=0;i<5;i++){
             System.out.println(i+1+""+food[i].foodName
                     +"\t"+food[i].foodPrice
