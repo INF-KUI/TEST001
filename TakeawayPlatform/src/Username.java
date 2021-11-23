@@ -4,7 +4,7 @@
 public class Username {
 
     String sellerUsername;
-    String buyerUsername;
+    String  buyerUsername;
 
 
 //设置商家用户名

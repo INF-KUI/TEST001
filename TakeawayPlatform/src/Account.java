@@ -1,30 +1,41 @@
 import java.util.Scanner;
 
 public class Account {
+    //创建新的对象，有用户名密码属性
+   static Username user01 = new Username();
+   static Password pass01 = new Password();
 
 
-
-//注册方法
     public int registerOrLogin(int op){
-//创建新的对象，有用户名密码属性
 
-    Username user01 = new Username();
-    Password pass01 = new Password();
-    user01.buyerUsername="null";
-    user01.sellerUsername="null";
-    pass01.buyerPassword="null";
-    pass01.sellerPassword="null";
 
+
+//注册或登陆方法
 
 //登陆验证账号密码方法,返回登陆成功的账号类型
 if (op == 1)
 {
     Scanner input = new Scanner(System.in);
     boolean ifLogin = false;
-
+    boolean ifRegisterB=true;
+    boolean ifRegisterS=true;
+    if(user01.buyerUsername.equals("null1")){//若用户名为初始化的值，说明用户没有注册
+        System.out.println("你还没有注册买家账号！");
+        ifRegisterB=false;
+    }
+    if(user01.sellerUsername.equals("null2")){//若用户名为初始化的值，说明用户没有注册
+        System.out.println("你还没有注册商家账号！");
+        ifRegisterS=false;
+    }
+    if(ifRegisterB||ifRegisterS){//要有至少一个注册好的账号，才能登陆
     System.out.println("==========账号登陆界面==========");
-    while (ifLogin == false) {
+    while (ifLogin == false){
 
+//        测试用
+//        System.out.println(user01.buyerUsername);
+//        System.out.println(pass01.buyerPassword);
+//        System.out.println(user01.sellerUsername);
+//        System.out.println(pass01.sellerPassword);
         System.out.println("请输入你的用户名:");
         String inputUsername = input.next();
         System.out.println("请输入你的密码:");
@@ -43,6 +54,7 @@ if (op == 1)
         }
         //都没成功说明有错误
         System.out.println("账号或密码错误,请重新登陆：");
+        }
     }
 
 
@@ -62,6 +74,7 @@ if(op==2)
              op = input.nextInt();
 
             if (op == 1) {
+
                 //买家账号
                 System.out.println("==========买家账号注册界面==========");
                 System.out.println("请设置你的用户名:");
@@ -74,6 +87,7 @@ if(op==2)
 
             }
             if (op == 2) {
+
                 //商家账号
                 System.out.println("==========商家账号注册界面==========");
                 System.out.println("请设置你的用户名:");
@@ -89,6 +103,13 @@ if(op==2)
 
             return  0;
         }
+
+
+//退出登陆方法
+    public static void logout(){
+
+    }
+
 
 
 

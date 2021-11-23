@@ -5,7 +5,12 @@ public class Food {
 
     static Food[] food =new Food [5];
 
-//设置食物名称
+
+    public double getFoodPrice() {
+        return foodPrice;
+    }
+
+    //设置食物名称
     public static void setFoodName(int op2,String name){
         food[op2].foodName=name;
 
@@ -39,9 +44,9 @@ public class Food {
     }
 //列出单个食物信息
     public static void list(int i){
-        System.out.println(i+1+""+food[i].foodName
-                +"\t"+food[i].foodPrice
-                +"\t"+food[i].foodDescription);
+        System.out.println("序号 名称      单价     描述");
+        System.out.printf("%d%s  %8s  %.2f  %s\n",i+1,'.',food[i].foodName,food[i].foodPrice,food[i].foodDescription);
+
 
     }
 
@@ -49,10 +54,10 @@ public class Food {
 //列出所有食物信息
     public static void list(){
         int i;
+        System.out.println("序号 名称      单价     描述");
         for(i=0;i<5;i++){
-            System.out.println(i+1+""+food[i].foodName
-                    +"\t"+food[i].foodPrice
-                    +"\t"+food[i].foodDescription);
+            System.out.printf("%d%s  %8s  %.2f  %s\n",i+1,'.',food[i].foodName,food[i].foodPrice,food[i].foodDescription);
+
         }
     }
 
