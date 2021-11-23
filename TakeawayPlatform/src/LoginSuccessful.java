@@ -36,8 +36,8 @@ public void sellerLogin(){
     System.out.println("请选择你对美食的操作？");
     System.out.println("1.我要添加新的食物");
     System.out.println("2.我要删除食物");
-    System.out.println("3.我要看看有什么美食");
-    System.out.println("4.我要修改食物的属性");
+    System.out.println("3.我要修改食物的属性");
+    System.out.println("4.我要看看有什么美食");
     int op = input.nextInt();
     int op2;    //操作的食物序号
     switch (op){
@@ -61,9 +61,37 @@ public void sellerLogin(){
             Food.deleteFood(input.nextInt()-1);
             System.out.println("删除成功！");
             break;
-        case 3:
-
-            //break;
+        case 3://修改属性
+            Food.list();
+            System.out.println("你要修改几号食物？");
+            op2=input.nextInt();
+            Food.list(op2-1);   //先列出这个食物的信息
+            System.out.println("你要修改它的什么属性？");
+            System.out.println("1.名称");
+            System.out.println("2.单价");
+            System.out.println("3.描述");
+            int op3=input.nextInt();
+            switch (op3) {
+                case 1:
+                    System.out.println("请输入新的名字：");
+                    Food.setFoodName(op2-1,input.nextLine());
+                    System.out.println("修改成功！");
+                    Food.list(op2-1);
+                    break;
+                case 2:
+                    System.out.println("请输入新的价格：");
+                    Food.setFoodPrice(op2-1,input.nextDouble());
+                    System.out.println("修改成功！");
+                    Food.list(op2-1);
+                    break;
+                case 3:
+                    System.out.println("请输入新的描述：");
+                    Food.addFoodDescription(op2-1,input.nextLine());
+                    System.out.println("修改成功！");
+                    Food.list(op2-1);
+                    break;
+            }
+            break;
         case 4:
         }
     }

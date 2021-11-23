@@ -37,6 +37,14 @@ public class Food {
         }
         else System.out.println("");
     }
+//列出单个食物信息
+    public static void list(int i){
+        System.out.println(i+1+""+food[i].foodName
+                +"\t"+food[i].foodPrice
+                +"\t"+food[i].foodDescription);
+
+    }
+
 
 //列出所有食物信息
     public static void list(){
