@@ -8,6 +8,7 @@ public class Food {
 //设置食物名称
     public static void setFoodName(int op2,String name){
         food[op2].foodName=name;
+
     }
 //设置食物价格
     public static void setFoodPrice(int op2,double price){
@@ -18,7 +19,14 @@ public class Food {
         food[op2].foodDescription=description;
     }
 
-//计算统计食物金额
+//删除食物
+    public static void deleteFood(int op2){
+        food[op2].foodName=" ";
+        food[op2].foodPrice=0;
+        food[op2].foodDescription=" ";
+
+
+    }
 
 //搜索食物
     public  void search(Food[] food, String target){
@@ -40,11 +48,10 @@ public class Food {
         }
     }
 
+//计算统计食物总金额
    public static double calcBills(int order,int num){
-
         return food[order-1].foodPrice*num;
-
-   }
+    }
 
 }
 

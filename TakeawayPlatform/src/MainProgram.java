@@ -7,7 +7,9 @@ public class MainProgram {
         Account account=new Account();
         Scanner input=new Scanner(System.in);
         Food food=new Food();
-    //主界面
+    //主界面(退出登陆时也是这个界面)
+        int pis=1; //(Program interface selection)程序界面选择
+
         System.out.println("请选择你的操作:");
         System.out.println("1.账号登陆");
         System.out.println("2.账号注册");

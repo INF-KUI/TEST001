@@ -8,7 +8,8 @@ public void buyerLogin() {
     int order;//美食序号
     int num;//美食数量
     double totalAmount;
-    int op;
+    int op;//操作选择
+    int pis;//界面选择
     System.out.println("===欢迎来到干净又卫生外卖平台===");
     System.out.println("请选择你的操作？");
     System.out.println("1.我要点餐");
@@ -30,8 +31,6 @@ public void buyerLogin() {
 public void sellerLogin(){
 
     Scanner input=new Scanner(System.in);
-    int op;
-    int i=0;
 
     System.out.println("===欢迎来到杆菌由胃生外卖平台===");
     System.out.println("请选择你对美食的操作？");
@@ -39,27 +38,32 @@ public void sellerLogin(){
     System.out.println("2.我要删除食物");
     System.out.println("3.我要看看有什么美食");
     System.out.println("4.我要修改食物的属性");
-    op = input.nextInt();
+    int op = input.nextInt();
+    int op2;    //操作的食物序号
     switch (op){
-        case 1:
+
+        case 1://添加新的食物
             Food.list();//先列出现有的食物
             System.out.println("添加到几号位？");
-            int op2=input.nextInt();
+            op2=input.nextInt();
             System.out.println("输入食物名字");
             Food.setFoodName(op2-1,input.next());
             System.out.println("输入食物单价");
             Food.setFoodPrice(op2-1,input.nextDouble());
             System.out.println("输入食物描述");
-            Food.addFoodDescription(op2,input.next());
+            Food.addFoodDescription(op2-1,input.next());
             System.out.println("添加成功");
             break;
 
-        case 2:
-
+        case 2://删除食物
+            Food.list();
+            System.out.println("你要删除几号食物？");
+            Food.deleteFood(input.nextInt()-1);
+            System.out.println("删除成功！");
             break;
         case 3:
 
-            break;
+            //break;
         case 4:
         }
     }
