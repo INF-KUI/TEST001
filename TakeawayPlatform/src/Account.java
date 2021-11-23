@@ -10,6 +10,10 @@ public class Account {
 
     Username user01 = new Username();
     Password pass01 = new Password();
+    user01.buyerUsername="null";
+    user01.sellerUsername="null";
+    pass01.buyerPassword="null";
+    pass01.sellerPassword="null";
 
 
 //登陆验证账号密码方法,返回登陆成功的账号类型
