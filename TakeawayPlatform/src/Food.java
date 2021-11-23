@@ -61,5 +61,16 @@ public class Food {
         return food[order-1].foodPrice*num;
     }
 
+//获取食物名称
+    public static String getOrderedFoodName(int order){
+        return food[order-1].foodName;
+    }
+//打印账单
+    public static void printBills(int op2,int num){
+
+
+
+    }
+
 }
 

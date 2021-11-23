@@ -16,6 +16,7 @@ public void buyerLogin() {
     System.out.println("2.目前只能点餐");
     op = input.nextInt();
     if (op == 1) {
+        //点餐并打印订单详情
         System.out.println("你想吃啥?:");
         Food.list();
         System.out.print("请输入你要点的美食编号：");
@@ -23,7 +24,12 @@ public void buyerLogin() {
         System.out.print("请输入份数：");
         num= input.nextInt();
         totalAmount=Food.calcBills(order,num);
-
+        String orderedFoodName=Food.getOrderedFoodName(order);
+        System.out.println("订单详情:");
+        System.out.printf("食物名      数量");
+        System.out.printf("%-10s\n",orderedFoodName);
+        System.out.printf("%-6d\n",num);
+        System.out.println("总金额:"+totalAmount);
     }
 }
 
@@ -92,7 +98,9 @@ public void sellerLogin(){
                     break;
             }
             break;
-        case 4:
+        case 4://查看目前所有的食物
+            Food.list();
+            break;
         }
     }
 }
